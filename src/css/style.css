@@ -1,0 +1,738 @@
+:root {
+  --hue: 160;
+  --saturation: 55%;
+  --lightness: 85%;
+
+  --primary: hsl(var(--hue), var(--saturation), var(--lightness));
+  --primary-light-10: hsl(var(--hue), var(--saturation), 10%);
+  --primary-light-20: hsl(var(--hue), var(--saturation), 20%);
+  --primary-light-30: hsl(var(--hue), var(--saturation), 30%);
+  --primary-light-40: hsl(var(--hue), var(--saturation), 40%);
+  --primary-light-50: hsl(var(--hue), var(--saturation), 50%);
+  --primary-light-60: hsl(var(--hue), var(--saturation), 60%);
+  --primary-light-70: hsl(var(--hue), var(--saturation), 70%);
+  --primary-light-80: hsl(var(--hue), var(--saturation), 80%);
+  --primary-light-90: hsl(var(--hue), var(--saturation), 90%);
+  --primary-sat-10: hsl(var(--hue), 10%, var(--lightness));
+  --primary-sat-20: hsl(var(--hue), 20%, var(--lightness));
+  --primary-sat-30: hsl(var(--hue), 30%, var(--lightness));
+  --primary-sat-40: hsl(var(--hue), 40%, var(--lightness));
+  --primary-sat-50: hsl(var(--hue), 50%, var(--lightness));
+  --primary-sat-60: hsl(var(--hue), 60%, var(--lightness));
+  --primary-sat-70: hsl(var(--hue), 70%, var(--lightness));
+  --primary-sat-80: hsl(var(--hue), 80%, var(--lightness));
+  --primary-sat-90: hsl(var(--hue), 90%, var(--lightness));
+  --primary-10-10: hsl(var(--hue), 10%, 10%);
+  --primary-20-20: hsl(var(--hue), 20%, 20%);
+  --primary-25-25: hsl(var(--hue), 25%, 25%);
+  --primary-30-30: hsl(var(--hue), 30%, 30%);
+  --primary-35-35: hsl(var(--hue), 35%, 35%);
+  --primary-40-40: hsl(var(--hue), 40%, 40%);
+  --primary-45-45: hsl(var(--hue), 45%, 45%);
+  --primary-50-50: hsl(var(--hue), 50%, 50%);
+  --primary-55-55: hsl(var(--hue), 55%, 55%);
+  --primary-60-60: hsl(var(--hue), 60%, 60%);
+  --primary-65-65: hsl(var(--hue), 65%, 65%);
+  --primary-70-70: hsl(var(--hue), 70%, 70%);
+  --primary-75-75: hsl(var(--hue), 75%, 75%);
+  --primary-80-80: hsl(var(--hue), 80%, 80%);
+  --primary-90-90: hsl(var(--hue), 90%, 90%);
+
+  --neutral-white-prim: hsl(var(--hue), 20%, 90%);
+  --neutral-grey-prim: hsl(var(--hue), 20%, 50%);
+  --neutral-black-prim: hsl(var(--hue), 20%, 10%);
+
+  --complementary: hsl(
+    calc(var(--hue) + 180),
+    var(--saturation),
+    var(--lightness)
+  );
+  --analogous-1: hsl(
+    calc(var(--hue) + 30),
+    var(--saturation),
+    var(--lightness)
+  );
+  --analogous-2: hsl(
+    calc(var(--hue) - 30),
+    var(--saturation),
+    var(--lightness)
+  );
+  --split-complementary-1: hsl(
+    calc(var(--hue) + 150),
+    var(--saturation),
+    var(--lightness)
+  );
+  --split-complementary-2: hsl(
+    calc(var(--hue) - 150),
+    var(--saturation),
+    var(--lightness)
+  );
+  --triadic-1: hsl(calc(var(--hue) + 120), var(--saturation), var(--lightness));
+  --triadic-2: hsl(calc(var(--hue) - 120), var(--saturation), var(--lightness));
+  --tetradic-1: hsl(calc(var(--hue) + 90), var(--saturation), var(--lightness));
+  --tetradic-2: hsl(
+    calc(var(--hue) + 180),
+    var(--saturation),
+    var(--lightness)
+  );
+  --tetradic-3: hsl(calc(var(--hue) - 90), var(--saturation), var(--lightness));
+  --square-1: hsl(calc(var(--hue) + 60), var(--saturation), var(--lightness));
+  --square-2: hsl(calc(var(--hue) + 180), var(--saturation), var(--lightness));
+  --square-3: hsl(calc(var(--hue) - 60), var(--saturation), var(--lightness));
+
+  /* universal neutral colors */
+  --from-primary: hsl(var(--hue), 30%, 50%);
+  --neutral-prim-white: hsl(var(--hue), 30%, 90%);
+  --neutral-prim-grey: hsl(var(--hue), 30%, 50%);
+  --neutral-prim-black: hsl(var(--hue), 30%, 10%);
+  --from-complementary: hsl(calc(var(--hue) + 180), 30%, 50%);
+  --neutral-compl-white: hsl(calc(var(--hue) + 180), 30%, 90%);
+  --neutral-compl-grey: hsl(calc(var(--hue) + 180), 30%, 50%);
+  --neutral-compl-black: hsl(calc(var(--hue) + 180), 30%, 10%);
+}
+:root.monochromatic {
+  --background: var(--neutral-prim-white);
+  --container: var(--primary-65-65);
+  --card: var(--primary-20-20);
+  --button: var(--primary-light-30);
+  --button-hover: var(--primary-55-55);
+  --icon: var(--primary-light-20);
+  --icon-negative: var(--primary-90-90);
+  --border: var(--primary-sat-80);
+  --form: var(--primary-65-65);
+  --label: var(--primary-light-30);
+  --input: var(--primary-70-70);
+  --input-focus: var(--primary-80-80);
+  --input-border: var(--primary-35-35);
+  --input-border-focus: var(--primary-55-55);
+  --box-shadow: hsla(--hue, 10%, 10%, 0.2);
+
+  --body-text: var(--neutral-prim-black);
+  --headings: var(--primary-sat-70);
+  --headings-alt: var(--primary-55-55);
+  --container-text: var(--primary-35-35);
+  --container-heading-text: var(--primary-sat-80);
+  --card-text: var(--primary-65-65);
+  --card-heading-text: var(--primary-sat-80);
+  --button-text: var(--primary-35-35);
+  --button-text-hover: var(--primary-45-45);
+  --form-text: var(--primary-35-35);
+  --label-text: var(--primary-light-20);
+  --input-text: var(--primary-45-45);
+  --input-text-focus: var(--primary-35-35);
+  --link-text: var(--primary-sat-80);
+  --link-text-hover: var(--primary-light-60);
+  --link-decor: var(--primary-sat-80);
+  --link-decor-hover: var(--primary-10-10);
+  --text-shadow: hsla(--hue, 10%, 10%, 0.2);
+}
+
+:root.analogous {
+  --background: var(--primary);
+  --container: var(--primary-65-65);
+  --card: var(--primary-20-20);
+  --button: var(--primary-light-30);
+  --button-hover: var(--primary-55-55);
+  --icon: var(--primary-light-20);
+  --icon-negative: var(--primary-90-90);
+  --border: var(--primary-sat-80);
+  --form: var(--primary-65-65);
+  --label: var(--primary-light-30);
+  --input: var(--primary-70-70);
+  --input-focus: var(--primary-80-80);
+  --input-border: var(--primary-35-35);
+  --input-border-focus: var(--primary-55-55);
+  --box-shadow: hsla(--hue, 10%, 10%, 0.2);
+
+  --body-text: var(--primary-light-10);
+  --headings: var(--primary-sat-70);
+  --headings-alt: var(--primary-55-55);
+  --container-text: var(--primary-35-35);
+  --container-heading-text: var(--primary-sat-80);
+  --card-text: var(--primary-65-65);
+  --card-heading-text: var(--primary-sat-80);
+  --button-text: var(--primary-35-35);
+  --button-text-hover: var(--primary-45-45);
+  --form-text: var(--primary-35-35);
+  --label-text: var(--primary-light-20);
+  --input-text: var(--primary-45-45);
+  --input-text-focus: var(--primary-35-35);
+  --link-text: var(--primary-sat-80);
+  --link-text-hover: var(--primary-light-60);
+  --link-decor: var(--primary-sat-80);
+  --link-decor-hover: var(--primary-10-10);
+  --text-shadow: hsla(--hue, 10%, 10%, 0.2);
+}
+
+body {
+  font-family: "Bodoni Moda", "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--body-text);
+}
+h1 {
+  font-family: "Prompt", sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--headings);
+}
+h2 {
+  font-family: "Hepta Slab", "Prompt", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--headings-alt);
+}
+h3 {
+  font-family: "Spectral", "Prompt", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--headings);
+}
+h4 {
+  font-family: "Prompt", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--headings-alt);
+}
+h5 {
+  font-family: "Prompt", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--headings-alt);
+}
+h6 {
+  font-family: "Prompt", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--headings-alt);
+}
+p {
+  padding: 2rem 3rem;
+  margin: 0 auto;
+  width: 70ch;
+  font-family: "Akatab", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--body-text);
+}
+a,
+a:visited,
+a:active {
+  font-family: "Prompt", monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--link-text);
+  text-decoration: none;
+  text-decoration-color: var(--link-decor);
+}
+a:hover {
+  color: var(--link-text-hover);
+  text-decoration: underline;
+  text-decoration-color: var(--link-decor-hover);
+}
+button {
+  font-family: "Spectral", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--button-text);
+  cursor: pointer;
+  background-color: var(--button);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+button:hover {
+  background-color: var(--button-hover);
+  color: var(--button-text-hover);
+}
+form {
+  font-family: "Spectral", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--form-text);
+  background-color: var(--form);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+}
+label {
+  font-family: "Spectral", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--label-text);
+}
+
+input {
+  font-family: "Spectral", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--input-text);
+  background-color: var(--input);
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+.logo img {
+  filter: drop-shadow(2px 2px 2px rgba(32, 2, 2, 0.2));
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: hsl(var(--hue), 50%, 70%);
+  color: hsl(var(--hue), 50%, 20%);
+}
+#generator form {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  @media (max-width: 768px) {
+    width: 90vw;
+    flex-direction: column;
+    overflow-x: scroll;
+  }
+}
+#generator input {
+  width: 90%;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+}
+input[type="range"] {
+  accent-color: pink;
+}
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 200px;
+  height: 3px;
+  background: purple;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #0dcacd;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #212020;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+.container {
+  width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  border: 5px solid var(--border);
+  border-radius: 35px;
+  background-color: var(--container);
+  color: var(--container-text);
+  box-shadow: var(--box-shadow);
+  z-index: 1;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  min-width: 50%;
+  height: 30vh;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 3px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--card);
+  font-family: "Spectral", sans-serif;
+  font-size: 1rem;
+  color: var(--card-text);
+  box-shadow: -6px -6px 6px rgba(255, 255, 255, 0.8),
+    6px 6px 6px rgba(0, 0, 0, 0.2);
+}
+.color-picker {
+  width: 40px;
+  height: 25px;
+  border: 3px ridge gold;
+  border-radius: 5px;
+  cursor: pointer;
+  color: transparent;
+  background-image: element();
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  margin: 0.5rem 0;
+  color: var(--link-text);
+}
+select {
+  appearance: none;
+  -webkit-appearance: none;
+}
+option {
+  appearance: none;
+  -webkit-appearance: none;
+}
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+div.primary-light-10 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-light-10);
+  color: var(--complementary);
+}
+div.primary-light-20 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-light-20);
+  color: var(--complementary);
+}
+div.primary-light-30 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-light-30);
+  color: var(--complementary);
+}
+div.primary-light-40 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-light-40);
+  color: var(--complementary);
+}
+div.primary-light-50 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-light-50);
+  color: var(--complementary);
+}
+div.primary-light-60 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-light-60);
+  color: var(--complementary);
+}
+div.primary-light-70 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-light-70);
+  color: var(--complementary);
+}
+div.primary-light-80 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-light-80);
+  color: var(--complementary);
+}
+div.primary-light-90 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-light-90);
+  color: var(--complementary);
+}
+div.primary-sat-10 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-sat-10);
+  color: var(--complementary);
+}
+div.primary-sat-20 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-sat-20);
+  color: var(--complementary);
+}
+div.primary-sat-30 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-sat-30);
+  color: var(--complementary);
+}
+div.primary-sat-40 {
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+  background-color: var(--primary-sat-50);
+  color: var(--complementary);
+}
+
+.boxes {
+  width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.boxes div {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.box-1 {
+  background-color: var(--primary-light-10);
+  color: var(--primary-light-60);
+  border: 3px solid inherit;
+  border-radius: 10px;
+  margin: 10px;
+}
+.box-2 {
+  background-color: var(--primary-light-20);
+  color: var(--primary-light-70);
+  border: 3px solid inherit;
+  border-radius: 10px;
+  margin: 10px;
+}
+.box-3 {
+  background-color: var(--primary-light-30);
+  color: var(--primary-light-80);
+  border: 3px solid inherit;
+  border-radius: 10px;
+  margin: 10px;
+}
+.box-4 {
+  background-color: var(--primary-light-40);
+  color: var(--primary-light-90);
+  border: 3px solid inherit;
+  border-radius: 10px;
+  margin: 10px;
+}
+.box-5 {
+  background-color: var(--neutral-white-prim);
+  color: var(--neutral-black-prim);
+  border: 3px solid var(--neutral-grey-prim);
+  border-radius: 10px;
+  margin: 10px;
+}
+.box-6 {
+  background-color: var(--complementary);
+  color: var(--neutral-black-prim);
+  border: 3px solid inherit;
+  border-radius: 10px;
+  margin: 10px;
+}
+.box-7 {
+  background-color: var(--split-complementary-1);
+  color: var(--neutral-white-prim);
+  border: 3px solid inherit;
+  border-radius: 10px;
+  margin: 10px;
+}
+.box-8 {
+  background-color: var(--triadic-2);
+  color: var(--neutral-grey-prim);
+  border: 3px solid inherit;
+  border-radius: 10px;
+  margin: 10px;
+}
+.box-9 {
+  background-color: var(--square-1);
+  color: var(--neutral-grey-prim);
+  border: 3px solid inherit;
+  border-radius: 10px;
+  margin: 10px;
+}
+.box-10 {
+  background-color: var(--tetradic-1);
+  color: var(--neutral-grey-prim);
+  border: 3px solid inherit;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.colors {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.colors div {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  background-color: inherit;
+}
+input[type="range"] {
+  height: 44px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 10px #5b5a78;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #000000;
+}
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 10px #a093ad;
+  border: 0px solid #000000;
+  height: 38px;
+  width: 16px;
+  border-radius: 7px;
+  background: #0a0212;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #ffffff;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 10px #5b5a78;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #000000;
+}
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0px 0px 10px #a093ad;
+  border: 0px solid #000000;
+  height: 38px;
+  width: 16px;
+  border-radius: 7px;
+  background: #0a0212;
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 24px;
+  box-shadow: 1px 1px 10px #5b5a78;
+}
+input[type="range"]::-ms-fill-upper {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 24px;
+  box-shadow: 1px 1px 10px #5b5a78;
+}
+input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 10px #a093ad;
+  border: 0px solid #000000;
+  height: 38px;
+  width: 16px;
+  border-radius: 7px;
+  background: #0a0212;
+  cursor: pointer;
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: #ffffff;
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: #ffffff;
+}

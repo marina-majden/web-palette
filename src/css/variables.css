@@ -1,0 +1,19 @@
+:root {
+  --hue: 170;
+  --saturation: 80%;
+  --lightness: 20%;
+
+  --main-color: hsl(var(--hue), var(--saturation), var(--lightness));
+
+  --clr-bg: hsl(var(--hue), 70%, 50%);
+  --clr-text: darkgray;
+
+  --hue120: var(--hue) * 3;
+  --sat2: var(--saturation) - 50%;
+  --light2: var(--lightness) + 20%;
+  --clr-calc-light: hsl(var(--hue120), var(--saturation), var(--lightness));
+
+  --text-p: "Bodoni Moda", sans-serif;
+  --text-h: "Spectral", sans-serif;
+  --text-a: "Prompt", monospace;
+}
