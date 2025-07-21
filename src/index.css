@@ -1,72 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 @import 'tailwindcss';
+@config "../tailwind.config.js";
 
-
+@theme {
+  --color-primary: hsl(201, 60%, 35%);
+  --color-brand: hsl(201, 60%, 53%);
+  --color-accent: hsl(330, 60%, 53%);
+  --color-background: rgba(255, 255, 255, 0.87);
+  --color-text: hsl(201, 35%, 8%);
+}
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-size: 1rem;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+@utility heading {
+  @apply font-bold text-5xl md:text-7xl lg:text-9xl text-white text-center mb-4;
 }
-a:hover {
-  color: #535bf2;
+@utility button {
+  @apply inline-block rounded-full bg-primary px-12 py-3 text-sm font-medium text-white my-4 transition hover:bg-brand focus:ring-3 focus:ring-accent focus:outline-hidden;
+}
+@utility button-outline {
+  @apply inline-block rounded-md border-1 bg-transparent border-primary px-12 py-3 text-sm font-medium text-primary transition hover:bg-primary hover:text-white focus:ring-3 focus:ring-accent focus:outline-hidden;
 }
 
-body {
-  margin: 0;
+.radio-inputs {
+  width: 100%;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.radio-input:checked + .radio-tile {
+  border-color: var(--color-primary);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: var(--color-primary);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.radio-input:checked + .radio-tile .radio-label {
+  color: var(--color-primary);
+}
+
+.radio-input:focus + .radio-tile {
+  border-color: var(--color-primary);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-tile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 25px;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  position: relative;
+  padding: 0.5rem 1rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.radio-tile:hover {
+  border-color: var(--color-primary);
+}
+
+.radio-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-label {
+  color: #242424;
+  transition: 0.375s ease;
+  text-align: center;
+  font-size: 13px;
+}
+
+.radio-label:hover {
+  color: var(--color-brand);
+}
+
+.radio-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+input[type='range'] {
+  height: 44px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type='range']:focus {
+  outline: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 10px #5b5a78;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid var(--color-primary);
+}
+input[type='range']::-webkit-slider-thumb {
+  box-shadow: 0px 0px 10px #a093ad;
+  border: 0px solid #000000;
+  height: 38px;
+  width: 16px;
+  border-radius: 7px;
+  background: var(--color-primary);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: #ffffff;
+}
+input[type='range']::-moz-range-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 10px #5b5a78;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid var(--color-primary);
+}
+input[type='range']::-moz-range-thumb {
+  box-shadow: 0px 0px 10px #a093ad;
+  border: 0px solid #000000;
+  height: 38px;
+  width: 16px;
+  border-radius: 7px;
+  background: var(--color-primary);
+  cursor: pointer;
+}
+input[type='range']::-ms-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type='range']::-ms-fill-lower {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 24px;
+  box-shadow: 1px 1px 10px #5b5a78;
+}
+input[type='range']::-ms-fill-upper {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 24px;
+  box-shadow: 1px 1px 10px #5b5a78;
+}
+input[type='range']::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 10px #a093ad;
+  border: 0px solid #000000;
+  height: 38px;
+  width: 16px;
+  border-radius: 7px;
+  background: var(--color-primary);
+  cursor: pointer;
+}
+input[type='range']:focus::-ms-fill-lower {
+  background: #ffffff;
+}
+input[type='range']:focus::-ms-fill-upper {
+  background: #ffffff;
 }
